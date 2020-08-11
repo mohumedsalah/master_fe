@@ -1,0 +1,12 @@
+.content {
+  background-position: center;
+  background-size: cover;
+  height: 100vh;
+  transition: 0.5s;
+  padding-top: 6.3rem;
+  font-size: 1.6rem;
+}
+
+#check:checked ~ .content {
+  margin-left: 0px;
+}

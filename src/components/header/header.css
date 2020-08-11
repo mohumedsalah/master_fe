@@ -1,0 +1,148 @@
+header {
+  position: fixed;
+  background: #f8f8f8;
+  padding: 0.5rem 0rem;
+  width: 100%;
+  height: 5.6rem;
+  background: #f8f8f8 0% 0% no-repeat padding-box;
+  box-shadow: 0.2rem 0rem 0.5rem #1f202640;
+  border: 0.1rem solid #d5e3d6;
+  border-radius: 0rem 0rem 2rem 2rem;
+  opacity: 1;
+}
+
+.header-container {
+  display: flex;
+  align-items: center;
+  z-index: 1;
+}
+
+.header-log {
+  display: flex;
+  align-items: center;
+  margin: 0 5rem;
+}
+.header-log img {
+  height: 5rem;
+}
+
+.header-log label {
+  font: Bold 0.8rem;
+  font-weight: bold;
+  font-size: 1.7rem;
+  color: #686868;
+  text-shadow: 0rem 0rem 0.3rem #efeff0;
+  text-transform: uppercase;
+  opacity: 1;
+}
+
+/* Add a black background color to the top navigation */
+.navbar {
+  overflow: hidden;
+  margin-left: 3.7rem;
+  padding-left: 7rem;
+  position: relative;
+}
+
+.navbar span {
+  cursor: pointer;
+  position: absolute;
+  float: left;
+  top: 55%;
+  width: 5.4rem;
+  height: 4.6rem;
+  transform: translate(-170%, -50%);
+  box-shadow: -2px 0px 6px #a7a7a729;
+  border: 1px solid #ffffff;
+  border-radius: 18px 18px 0px 0px;
+  margin-left: 3rem;
+  text-align: center;
+  padding-top: 0.6rem;
+  opacity: 1;
+}
+
+.navbar span:hover,
+.navbar span.active {
+  color: #cc0b10;
+}
+
+/* Style the links inside the navigation bar */
+.navbar a {
+  float: left;
+  display: block;
+  color: #1f2026;
+  text-transform: uppercase;
+  text-align: center;
+  padding: 1.6rem;
+  text-decoration: none;
+  font-size: 1.3rem;
+  border-bottom: 0.3rem solid transparent;
+  cursor: pointer;
+}
+
+.navbar a:hover,
+.navbar a.active {
+  border-bottom: 0.3rem solid #cc0b10;
+  font-weight: bold;
+  color: #cc0b10;
+}
+
+label #sidebar_btn {
+  z-index: 1;
+  color: #000;
+  cursor: pointer;
+  font-size: 3rem;
+  margin: 0.5rem 0;
+  transition: 0.5s;
+  transition-property: color;
+}
+label #sidebar_btn:hover {
+  color: rgb(211, 25, 71);
+}
+
+#check:checked ~ .sidebar {
+  left: -25.5rem;
+}
+
+#check:checked ~ .sidebar a span {
+  display: none;
+}
+
+#check:checked ~ .sidebar a {
+  font-size: 2rem;
+  margin-left: 0rem;
+  width: 8rem;
+}
+
+.content {
+  background-position: center;
+  background-size: cover;
+  height: 100vh;
+  transition: 0.5s;
+}
+
+#check:checked ~ .content {
+  margin-left: 0rem;
+}
+
+#check {
+  display: none;
+}
+
+.lang-nav {
+  margin-left: auto;
+  width: 16rem;
+  font-weight: bold;
+  display: flex;
+  font-size: 1rem;
+  justify-content: space-around;
+}
+.lang-nav div {
+  cursor: pointer;
+}
+
+.lang-nav label {
+  margin: 0 0.5rem;
+  font-size: 1.6rem;
+  cursor: pointer;
+}
