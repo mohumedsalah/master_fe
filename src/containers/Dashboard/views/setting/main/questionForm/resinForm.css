@@ -1,0 +1,38 @@
+.setting-form-header {
+  text-align: center;
+  color: #cc0b10;
+  text-transform: uppercase;
+  font-weight: bold;
+  font-size: 3rem;
+}
+
+.setting-form-container {
+  display: flex;
+  flex-direction: column;
+}
+
+.setting-action-side {
+  margin-top: 5rem;
+  margin-left: auto;
+  display: flex;
+  flex-direction: row-reverse;
+}
+
+.setting-action-side .btn {
+  font-size: 1.5rem;
+  margin: 0 1rem;
+  box-shadow: -3px 3px 6px #00000029;
+  border-radius: 9px;
+  width: 12rem;
+}
+
+.setting-filed-container input {
+  font-size: 1.5rem;
+}
+.setting-filed-container span {
+  font-size: 1.2rem;
+  margin-left: 0.6rem;
+}
+.custom-field {
+  margin: 0.4rem 0;
+}

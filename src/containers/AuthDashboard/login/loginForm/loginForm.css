@@ -16,10 +16,10 @@
   align-items: stretch;
   margin: 1rem 0;
   width: 60%;
-  height: 7rem;
+  height: 4rem;
 }
 .login-form form .input-group input {
-  height: auto;
+  height: 4rem;
   font-size: 2rem;
   border-radius: 20px !important;
   padding-left: 7rem;
@@ -35,10 +35,11 @@
 
 .login-form form .input-group div div {
   width: 6rem;
+  height: 3.9rem;
   display: flex;
   justify-content: space-evenly;
   background: white;
-  border-radius: 20px 0px 0px 20px;
+  border-radius: 25px 0px 0px 25px;
 }
 .login-form .icon {
   font-size: 3rem;

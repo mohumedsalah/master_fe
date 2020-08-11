@@ -1,0 +1,11 @@
+.single-question-container {
+  display: flex;
+  flex-direction: column;
+  margin-top: 5rem;
+}
+
+.single-question-container > div {
+  display: flex;
+  align-items: center;
+  margin-bottom: 1rem;
+}

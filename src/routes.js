@@ -1,7 +1,8 @@
 import Login from "./containers/AuthDashboard/login/login";
 
-import Home from "./containers/Dashboard/views/home/Home";
+import Home from "./containers/Dashboard/views/setting/main/tableScrore";
 import SiteHome from "./containers/Site/Home/Home";
+import TakeQuiz from "./containers/Site/takeQuiz/TakeQuiz";
 
 // const Specialist = React.lazy(() => import("./views/Setup/Specialist/specialist"));
 // const Modals = React.lazy(() => import("./views/Setup/Specialist/specialist"));
@@ -13,7 +14,13 @@ export const routes = [
 ];
 
 export const siteRoutes = [
+  {
+    path: "/site/take-quiz",
+    name: "take-quiz",
+    component: TakeQuiz,
+  },
   { path: "/site", name: "Home", component: SiteHome },
+ 
 ];
 
 export const Authorize = [

@@ -1,0 +1,29 @@
+.quiz-container {
+  height: 100%;
+  width: 100%;
+  display: flex;
+  justify-content: center;
+  align-items: flex-start;
+  padding-top: 4rem;
+}
+
+.quiz-container > div {
+  max-width: 58rem;
+  width: 66%;
+  background: #f3eeee96 0% 0% no-repeat padding-box;
+  padding: 1rem;
+  box-shadow: 3px 3px 10px #00000040;
+  border-radius: 20px;
+}
+.quiz-container > div > h2 {
+  color: #d20f0fde;
+}
+
+.action-button {
+  display: flex;
+}
+
+.action-button button {
+  width: 10rem;
+  margin: 0rem 1rem;
+}

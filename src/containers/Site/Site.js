@@ -42,7 +42,7 @@ const Site = (props) => {
               />
             ) : null;
           })}
-          <Redirect from="/" to="/home" />
+          {/* <Redirect from="/" to="/site" /> */}
         </Switch>
       </div>
     </div>
