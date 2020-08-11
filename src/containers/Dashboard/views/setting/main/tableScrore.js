@@ -12,14 +12,9 @@ import {
   Button,
 } from "@material-ui/core";
 
-import {
-  Add as AddIcon,
-  Delete as DeleteIcon,
-  Edit as EditIcon,
-  Search as SearchIcon,
-  KeyboardBackspace as KeyboardBackspaceIcon,
-} from "@material-ui/icons";
+import { Add as AddIcon } from "@material-ui/icons";
 import InfiniteScroll from "react-infinite-scroller";
+import moment from "moment";
 
 import { style } from "./tableScoreCss";
 import axiosBaseAuth from "../../../../../shared/axiosBaseAuth";
@@ -43,21 +38,18 @@ export default function CustomizedTables({ history }) {
   const [rows, setRows] = useState([]);
 
   const [haveMore, setHaveMore] = useState(true);
-  const [searchText, setSearchText] = useState("");
   const [editId, setEditId] = useState("");
   const [open, setOpen] = React.useState(false);
   const classes = useStyles();
   const loadMore = () => {
-    const searchTextConvert = "" + toEng(searchText);
-    const url = `/api/resin?limit=${limit}&skip=${rows.length}&search=${searchTextConvert}`;
+    const url = `api/user/user-scores`;
 
     axiosBaseAuth.get(url).then((res) => {
       setRows((last) => {
         return [...last, ...res.data];
       });
-      if (res.data.length < limit) {
-        setHaveMore(false);
-      }
+
+      setHaveMore(false);
     });
   };
   let scrollParentRef = null;
@@ -74,18 +66,6 @@ export default function CustomizedTables({ history }) {
     setOpen(false);
   };
 
-  const deleteItem = (id) => {
-    deleteConfirmation(
-      () => axiosBaseAuth.delete(`/api/resin/${id}`),
-      () =>
-        setRows((old) => {
-          let indexOfDeleted = old.findIndex((x) => x._id === id);
-          old.splice(indexOfDeleted, 1);
-          return [...old];
-        })
-    );
-  };
-
   const renderTable = () => {
     const filteredArr = rows.reduce((acc, current) => {
       const x = acc.find((item) => item._id === current._id);
@@ -98,9 +78,11 @@ export default function CustomizedTables({ history }) {
 
     return filteredArr.map((row, inx) => (
       <StyledTableRow key={row._id}>
-        <StyledTableCell align="center">E-mail</StyledTableCell>
-        <StyledTableCell align="center">Degree</StyledTableCell>
-        <StyledTableCell align="center">Take At</StyledTableCell>
+        <StyledTableCell align="center">{row.email}</StyledTableCell>
+        <StyledTableCell align="center">{row.quiz.score}</StyledTableCell>
+        <StyledTableCell align="center">
+          {moment(row.quiz.updatedAt).format("DD/MM/YYYY")}
+        </StyledTableCell>
       </StyledTableRow>
     ));
   };
@@ -109,34 +91,7 @@ export default function CustomizedTables({ history }) {
     <div className="table-page-container">
       <div className="table-view-header">
         <div>
-          <IconButton
-            onClick={() => {
-              history.push("/dashboard/setting");
-            }}
-            aria-label="edit"
-          >
-            <KeyboardBackspaceIcon fontSize="large" />
-          </IconButton>
-          <label>{t("Resin")}</label>
-        </div>
-        <div>
-          <input
-            onChange={(e) => {
-              setSearchText(e.target.value);
-              removeTableData();
-            }}
-            type="text"
-            placeholder={t("SEARCH")}
-            className="form-control"
-          />
-          <Button
-            className={classes.searchButton}
-            variant="contained"
-            color="secondary"
-            aria-label="edit"
-          >
-            <SearchIcon fontSize="large" />
-          </Button>
+          <label>{t("User Scores")}</label>
         </div>
       </div>
       <TableContainer
